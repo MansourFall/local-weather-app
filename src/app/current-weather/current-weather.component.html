@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="current; else noData">
   <span>{{ current.city }}, {{ current.country }} </span>
   <span>{{ current.date | date: 'fullDate' }}</span>
 </div>
@@ -9,3 +9,8 @@
 <div>
   <span>{{ current.description }}</span>
 </div>
+<ng-template #noData>
+  <div>
+    <span>No data available</span>
+  </div>
+</ng-template>
